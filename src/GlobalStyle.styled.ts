@@ -77,8 +77,6 @@ h6 {
 	font-size: inherit;
 	font-weight: 400;
 }
-
-
 	
   body {
 	margin: 0 auto; 
@@ -94,6 +92,17 @@ h6 {
 		width: 100%;
 		background: #FFFFFF;
 		overflow: auto;
+	}
+
+	#root{
+		
+	}
+
+	main {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 50px 80px;
 	}
 
 `;
