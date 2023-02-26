@@ -106,6 +106,11 @@ h6 {
 		padding: 50px 80px;
 	}
 
+	h2 {
+		font-size: 36px;
+		font-weight: 700;
+	}
+
 `;
 
 export default GlobalStyle;

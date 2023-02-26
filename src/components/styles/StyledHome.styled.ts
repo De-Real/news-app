@@ -5,11 +5,6 @@ export const StyledHome = styled.div`
 	flex-direction: column;
 	align-items: center;
 
-	& h2 {
-		font-size: 36px;
-		font-weight: 700;
-	}
-
 	& p {
 		text-align: center;
 		font-size: 18px;
