@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 
-	@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
 	* {
 	padding: 0;
@@ -85,6 +85,7 @@ h6 {
 	 color: #171A21;
 	 display: flex;
 	 justify-content: center;
+	 line-height: 1.2;
   }
 
   body > #root  {
