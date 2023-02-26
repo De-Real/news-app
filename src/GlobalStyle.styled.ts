@@ -84,14 +84,16 @@ h6 {
 	margin: 0 auto; 
 	 background-color: #1A120B;
     font-family: 'Inter', sans-serif;
-	 color: #FFFFFF;
+	 color: #171A21;
 	 display: flex;
 	 justify-content: center;
   }
 
   body > #root  {
 		min-height: 100vh;
-		background: #171A21;
+		width: 100%;
+		background: #FFFFFF;
+		overflow: auto;
 	}
 
 `;
