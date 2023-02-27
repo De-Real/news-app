@@ -111,6 +111,11 @@ h6 {
 		font-weight: 700;
 	}
 
+	h3 { 
+		font-size: 28px;
+		font-weight: 700
+	}
+
 `;
 
 export default GlobalStyle;
