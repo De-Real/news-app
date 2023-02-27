@@ -10,4 +10,9 @@ export const StyledNews = styled.div`
 		gap: 20px;
 		margin: 10px 0;
 	}
+
+	& p {
+		font-size: 24px;
+		margin-bottom: 12px;
+	}
 `;

@@ -103,7 +103,7 @@ h6 {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		padding: 50px 80px;
+		padding: 40px 80px;
 	}
 
 	h2 {

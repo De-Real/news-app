@@ -1,49 +1,45 @@
-import { useState } from "react";
-import { INews } from "../../types/newsInterface";
-
+import { memo } from "react";
 import Button from "@mui/material/Button";
 import NewsItem from "./NewsItem";
-import { StyledNews } from "../styles/StyledNews.styled";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { changeFetchPage, selectFetchPage } from "../../store/newsSlice";
+import { StyledNews } from "../styles/News.styled";
+import { useAppSelector } from "../../store/hooks";
+import { selectTotalNews } from "../../store/newsSlice";
+import { useLoadNews } from "../../hooks/load-news";
+import CircularLoading from "../UI/CircularLoading";
 
-const News = ({ news }: { news: INews[] }) => {
-	const [totalNews, setTotalNews] = useState(news);
+const News = () => {
+	const totalNews = useAppSelector(selectTotalNews);
 
-	const fetchPage = useAppSelector(selectFetchPage);
-	const dispatch = useAppDispatch();
+	const { fetchNews, fetchPage, error, isLoading } = useLoadNews();
 
-	//When goto home and back news are cleaned, need to fix it by passing totalNews in global state
-	const fetchData = async () => {
-		const response = await fetch(
-			`https://jsonplaceholder.typicode.com/users/${fetchPage}/posts`
-		);
-		if (!response.ok) {
-			console.log("ERROR", response);
-			return;
-		}
+	const hasData = totalNews.length !== 0;
+	const isMaxPage = fetchPage === 10;
 
-		const results = (await response.json()) as INews[];
-
-		console.log(results);
-		setTotalNews((currentNews) => [...currentNews, ...results]);
-		dispatch(changeFetchPage());
-	};
+	const dataElement = hasData ? (
+		<ul>
+			{totalNews.map((newsItem) => {
+				return <NewsItem key={newsItem.id} item={newsItem} />;
+			})}
+		</ul>
+	) : (
+		<p>No news found.</p>
+	);
 
 	return (
 		<StyledNews>
-			<ul>
-				{totalNews.map((newsItem) => {
-					return <NewsItem key={newsItem.id} item={newsItem} />;
-				})}
-			</ul>
+			{dataElement}
+			{isLoading && <CircularLoading />}
+			{error && <p>Error occured. Reason: {error}</p>}
 			{fetchPage !== 10 && (
-				<Button variant="contained" onClick={fetchData}>
-					Upload news
+				<Button variant="contained" onClick={fetchNews}>
+					Load news
 				</Button>
+			)}
+			{isMaxPage && !hasData && (
+				<p> You have watched and deleted all available news</p>
 			)}
 		</StyledNews>
 	);
 };
 
-export default News;
+export default memo(News);

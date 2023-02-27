@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { StyledDiv, StyledHeader } from "../styles/StyledHeader.styled";
+import { StyledDiv, StyledHeader } from "../styles/Header.styled";
 import LanguagePicker from "./LanguagePicker";
 
 import Button from "@mui/material/Button";

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Switch from "@mui/material/Switch";
-import { StyledDiv } from "../styles/StyledHeader.styled";
+import { StyledDiv } from "../styles/Header.styled";
 
 const LanguagePicker = () => {
 	const [isChecked, setIsChecked] = useState(true);
