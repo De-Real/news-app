@@ -13,8 +13,10 @@ import {
 } from "../styles/Profile.styled";
 
 import Button from "@mui/material/Button";
+import { useTranslation } from "react-i18next";
 
 const Profile = () => {
+	const { t } = useTranslation();
 	return (
 		<StyledProfile>
 			<StyledHeaderProfile>
@@ -22,46 +24,22 @@ const Profile = () => {
 					<img src={adminPhoto} alt="Admin" />
 				</StyledImg>
 				<div>
-					<h3> James Admin </h3>
-					<StyledTitle> Owner of imagine corporation </StyledTitle>
-					<StyledLocation> Location: Silicon Valley </StyledLocation>
-					<p>
-						Description: Lorem ipsum dolor sit amet consectetur adipisicing
-						elit. Explicabo aperiam porro hic repudiandae, culpa dolorum
-						commodi? Architecto praesentium fugiat nostrum? Repellendus, iusto
-						incidunt. Error suscipit eveniet animi aperiam, voluptatem alias?
-						Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores
-						totam omnis accusamus unde! Aspernatur rem perspiciatis quo iste
-						porro, nam corrupti quod enim labore veritatis eligendi, temporibus
-						nisi. Adipisci, quidem?
-					</p>
+					<h3>{t("profile_name")}</h3>
+					<StyledTitle> {t("profile_title")} </StyledTitle>
+					<StyledLocation> {t("profile_location")} </StyledLocation>
+					<p>{t("profile_description")}</p>
 				</div>
 			</StyledHeaderProfile>
 			<StyledHeaderProfile>
 				<StyledButtonsControl>
-					<Button variant="contained">Settings</Button>
-					<Button variant="outlined">Followers (46)</Button>
+					<Button variant="contained">{t("profile_settings")}</Button>
+					<Button variant="outlined">{t("profile_followers")}</Button>
 				</StyledButtonsControl>
 				<StyledActivities>
-					<h3>Activities</h3>
-					<div>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Et fugit ex
-						dignissimos alias quidem, quia numquam quibusdam dolor animi
-						voluptate, nesciunt, temporibus at in labore dicta! Rerum laboriosam
-						eos magnam?
-					</div>
-					<div>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto,
-						dicta necessitatibus. Architecto impedit, ad maiores iusto
-						repudiandae debitis dolore provident a veniam dolor esse tempora
-						quidem, doloribus rem enim error!
-					</div>
-					<div>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta neque
-						exercitationem commodi assumenda, voluptatibus numquam quos. Fugiat
-						ut deserunt dolores, voluptatibus ipsa, quae fuga repellat, maxime
-						autem quaerat debitis amet.
-					</div>
+					<h3>{t("profile_activities")}</h3>
+					<div>{t("profile_activities_desc")}</div>
+					<div>{t("profile_activities_desc")}</div>
+					<div>{t("profile_activities_desc")}</div>
 				</StyledActivities>
 			</StyledHeaderProfile>
 		</StyledProfile>

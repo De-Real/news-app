@@ -12,6 +12,7 @@ import Button from "@mui/material/Button";
 import { useActionData, useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../store/hooks";
 import { logIn } from "../../store/loginSlice";
+import { useTranslation } from "react-i18next";
 
 type ActionResponseType = { error: boolean } | undefined;
 
@@ -21,6 +22,8 @@ const Login = () => {
 	const dispatch = useAppDispatch();
 
 	const data = useActionData() as ActionResponseType;
+
+	const { t } = useTranslation();
 
 	const navigate = useNavigate();
 
@@ -48,14 +51,14 @@ const Login = () => {
 
 	return (
 		<StyledLoginWrapper>
-			<h2> Sign in</h2>
+			<h2> {t("signIn")}</h2>
 			<div>
-				<p> Sign in using your login and password</p>
+				<p>{t("signIn_text")}</p>
 				<p>
-					Login: <span>admin</span>
+					{t("signIn_login")}: <span>admin</span>
 				</p>
 				<p>
-					Password: <span>12345</span>
+					{t("signIn_password")}: <span>12345</span>
 				</p>
 			</div>
 
@@ -63,13 +66,13 @@ const Login = () => {
 				<TextField
 					error={error}
 					id="outlined-error-helper-text"
-					label="Login"
+					label={t("signIn_login")}
 					defaultValue={""}
 					name="login"
 				/>
 				<FormControl variant="outlined" error={error}>
 					<InputLabel htmlFor="outlined-adornment-password">
-						Password
+						{t("signIn_password")}
 					</InputLabel>
 					<OutlinedInput
 						id="outlined-adornment-password"
@@ -91,9 +94,9 @@ const Login = () => {
 						label="Password"
 					/>
 				</FormControl>
-				{error && <p>Login or password is incorrect. Please try again</p>}
+				{error && <p>{t("signIn_error")}</p>}
 				<Button type="submit" variant="contained">
-					Submit
+					{t("submit")}
 				</Button>
 			</StyledForm>
 		</StyledLoginWrapper>

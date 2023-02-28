@@ -6,9 +6,11 @@ import { useAppSelector } from "../../store/hooks";
 import { selectTotalNews } from "../../store/newsSlice";
 import { useLoadNews } from "../../hooks/load-news";
 import CircularLoading from "../UI/CircularLoading";
+import { useTranslation } from "react-i18next";
 
 const News = () => {
 	const totalNews = useAppSelector(selectTotalNews);
+	const { t } = useTranslation();
 
 	const { fetchNews, fetchPage, error, isLoading } = useLoadNews();
 
@@ -22,17 +24,17 @@ const News = () => {
 			})}
 		</ul>
 	) : (
-		<p>No news found.</p>
+		<p>{t("no_news")}</p>
 	);
 
 	return (
 		<StyledNews>
 			{dataElement}
 			{isLoading && <CircularLoading />}
-			{error && <p>Error occured. Reason: {error}</p>}
+			{error && <p>{t("load_news_error", error)}</p>}
 			{fetchPage !== 10 && (
 				<Button variant="contained" onClick={fetchNews}>
-					Load news
+					{t("load_news")}
 				</Button>
 			)}
 			{isMaxPage && !hasData && (

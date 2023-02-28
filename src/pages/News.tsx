@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { json, LoaderFunctionArgs, useLoaderData } from "react-router-dom";
 import { newsURL } from "../api/urls";
 import News from "../components/News/News";
@@ -13,6 +14,7 @@ import { INews } from "../types/newsInterface";
 const NewsPage = () => {
 	const isInitial = useAppSelector(selectIsInitial);
 	const dispatch = useAppDispatch();
+	const { t } = useTranslation();
 
 	const news = useLoaderData() as INews[];
 	useEffect(() => {
@@ -24,7 +26,7 @@ const NewsPage = () => {
 
 	return (
 		<>
-			<h2> News</h2>
+			<h2>{t("news")}</h2>
 			<News />
 		</>
 	);

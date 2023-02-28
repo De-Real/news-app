@@ -13,6 +13,7 @@ const Home = () => {
 			<h3>{t("news_t")}</h3>
 			<p>{t("news_desc")}</p>
 			<p>{t("news_task")}</p>
+			<p>{t("news_limitation")}</p>
 			<h3>{t("language_t")}</h3>
 			<p>{t("language_desc")}</p>
 			<h3>{t("prof_login_t")}</h3>

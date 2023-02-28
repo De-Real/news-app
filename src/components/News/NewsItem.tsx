@@ -3,9 +3,11 @@ import { StyledNewsItem } from "../styles/NewsItem.styled";
 import Button from "@mui/material/Button";
 import { useAppDispatch } from "../../store/hooks";
 import { deleteNewsItem } from "../../store/newsSlice";
+import { useTranslation } from "react-i18next";
 
 const NewsItem = ({ item }: { item: INews }) => {
 	const dispatch = useAppDispatch();
+	const { t } = useTranslation();
 
 	const deleteItem = () => {
 		dispatch(deleteNewsItem(item.id));
@@ -17,7 +19,7 @@ const NewsItem = ({ item }: { item: INews }) => {
 			<p>{item.body}</p>
 			<div>
 				<Button variant="contained" color="error" onClick={deleteItem}>
-					Delete
+					{t("delete")}
 				</Button>
 			</div>
 		</StyledNewsItem>
