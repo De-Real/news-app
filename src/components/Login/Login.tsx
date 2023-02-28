@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import IconButton from "@mui/material/IconButton";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
@@ -17,21 +17,26 @@ type ActionResponseType = { error: boolean } | undefined;
 
 const Login = () => {
 	const [showPassword, setShowPassword] = useState(false);
+	const [error, setError] = useState(false);
 	const dispatch = useAppDispatch();
 
 	const data = useActionData() as ActionResponseType;
 
 	const navigate = useNavigate();
 
-	let error = false;
+	useEffect(() => {
+		if (typeof data !== "object") return;
 
-	if (typeof data === "object") {
-		error = data.error;
-		if (!data.error) {
+		if (data.error) {
+			setError(data.error);
+			return;
+		} else {
 			dispatch(logIn());
 			navigate("/profile");
 		}
-	}
+
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [data, dispatch]);
 
 	const handleClickShowPassword = () => setShowPassword((show) => !show);
 

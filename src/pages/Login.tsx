@@ -1,5 +1,5 @@
 import React from "react";
-import { ActionFunctionArgs } from "react-router-dom";
+import { ActionFunctionArgs, redirect } from "react-router-dom";
 import Login from "../components/Login/Login";
 
 const LoginPage = () => {
@@ -23,6 +23,5 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 		return { error: true };
 	}
 
-	console.log("Signed up successfully!");
 	return { error: false };
 };
