@@ -39,6 +39,7 @@ body {
 	-ms-text-size-adjust: 100%;
 	-moz-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
+	
 }
 input,
 button,
@@ -93,6 +94,7 @@ h6 {
 		width: 100%;
 		background: #FFFFFF;
 		overflow: auto;
+		overflow-y: scroll;
 	}
 
 	#root{
@@ -109,6 +111,7 @@ h6 {
 	h2 {
 		font-size: 36px;
 		font-weight: 700;
+		text-align: center;
 	}
 
 	h3 { 

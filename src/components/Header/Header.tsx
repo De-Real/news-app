@@ -5,39 +5,41 @@ import LanguagePicker from "./LanguagePicker";
 import Button from "@mui/material/Button";
 import { useAppSelector } from "../../store/hooks";
 import { selectIsLoggedIn } from "../../store/loginSlice";
+import { useTranslation } from "react-i18next";
 
 const Header = () => {
 	const signedIn = useAppSelector(selectIsLoggedIn);
+	const { t } = useTranslation();
 
 	return (
 		<StyledHeader>
-			<StyledDiv gap={50}>
+			<StyledDiv gap={50} className="first">
 				<NavLink
 					to="/"
 					className={({ isActive }) => (isActive ? "active" : "")}
 				>
-					Home
+					{t("home")}
 				</NavLink>
 				<NavLink
 					to="/news"
 					className={({ isActive }) => (isActive ? "active" : "")}
 				>
-					News
+					{t("news")}
 				</NavLink>
 			</StyledDiv>
-			<StyledDiv gap={30}>
+			<StyledDiv gap={30} className="second">
 				<LanguagePicker />
 				{signedIn && (
 					<NavLink
 						to="/profile"
 						className={({ isActive }) => (isActive ? "active" : "")}
 					>
-						<Button variant="contained">Profile</Button>
+						<Button variant="contained">{t("profile")}</Button>
 					</NavLink>
 				)}
 				{!signedIn && (
 					<NavLink to="/login">
-						<Button variant="contained">Sign in</Button>
+						<Button variant="contained">{t("signIn")}</Button>
 					</NavLink>
 				)}
 			</StyledDiv>
