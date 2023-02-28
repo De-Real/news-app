@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import RootLayout from "./layout/RootLayout";
 import ErrorPage from "./pages/Error";
 import HomePage from "./pages/Home";
-import LoginPage from "./pages/Login";
+import LoginPage, { action as loginAction } from "./pages/Login";
 import NewsPage, { loader as newsLoader } from "./pages/News";
 import ProfilePage from "./pages/Profile";
 
@@ -22,7 +22,7 @@ export const router = createBrowserRouter([
 				loader: newsLoader,
 			},
 			{ path: "/profile", element: <ProfilePage /> },
-			{ path: "/login", element: <LoginPage /> },
+			{ path: "/login", element: <LoginPage />, action: loginAction },
 		],
 	},
 ]);

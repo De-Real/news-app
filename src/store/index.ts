@@ -1,9 +1,11 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
+import loginReducer from "./loginSlice";
 import newsReducer from "./newsSlice";
 
 export const store = configureStore({
 	reducer: {
 		news: newsReducer,
+		login: loginReducer,
 	},
 });
 

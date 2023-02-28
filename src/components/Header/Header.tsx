@@ -3,9 +3,11 @@ import { StyledDiv, StyledHeader } from "../styles/Header.styled";
 import LanguagePicker from "./LanguagePicker";
 
 import Button from "@mui/material/Button";
+import { useAppSelector } from "../../store/hooks";
+import { selectIsLoggedIn } from "../../store/loginSlice";
 
 const Header = () => {
-	const isLoggedIn = false;
+	const signedIn = useAppSelector(selectIsLoggedIn);
 
 	return (
 		<StyledHeader>
@@ -25,7 +27,7 @@ const Header = () => {
 			</StyledDiv>
 			<StyledDiv gap={30}>
 				<LanguagePicker />
-				{isLoggedIn && (
+				{signedIn && (
 					<NavLink
 						to="/profile"
 						className={({ isActive }) => (isActive ? "active" : "")}
@@ -33,7 +35,7 @@ const Header = () => {
 						<Button variant="contained">Profile</Button>
 					</NavLink>
 				)}
-				{!isLoggedIn && (
+				{!signedIn && (
 					<NavLink to="/login">
 						<Button variant="contained">Sign in</Button>
 					</NavLink>
