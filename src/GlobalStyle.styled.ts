@@ -39,8 +39,7 @@ body {
 	-ms-text-size-adjust: 100%;
 	-moz-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
-	
-}
+	}
 input,
 button,
 textarea {
@@ -86,8 +85,8 @@ h6 {
 		background: #FFFFFF;
 		color: #171A21;
 		line-height: 1.2;
-		overflow: auto;
-		overflow-y: scroll;
+		/* overflow: auto;
+		overflow-y: scroll; */
 	}
 
 	main {
