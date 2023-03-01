@@ -25,4 +25,15 @@ export const StyledNewsItem = styled.li`
 	&:hover {
 		transform: scale(1.025);
 	}
+
+
+	@media (max-width: 768px) {
+		padding: 10px 15px;
+
+		& h3 {
+			font-size: 20px;
+		}
+		
+	}
+
 `;

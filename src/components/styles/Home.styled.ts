@@ -10,5 +10,8 @@ export const StyledHome = styled.div`
 		font-size: 18px;
 		max-width: 500px;
 		margin-bottom: 12px;
+		@media (max-width: 560px) {
+			font-size: 16px;
+		}
 	}
 `;

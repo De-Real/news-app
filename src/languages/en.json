@@ -7,6 +7,7 @@
 		"welcome": "Hello and welcome to this website!",
 		"welcome_desc": "Here you can find something simple and amazing :)",
 		"technologies": "Technologies stack: React, TypeScript, Redux TK, React Router DOM (6.4+version with new features), react-i18next and Material UI. Simple and REACTive -:",
+		"adaptive": "This website has adaptive design, so user can use any device (min-width: 320px, max-width: 1600px).",
 		"news_t": "News page",
 		"news_desc": "News page fetch primitive news ( using loader) and render them. Redux is used to save some values between rerender.",
 		"news_task": "User can delete some news and load more news on button click. Also, news array is saved globally to avoid data loss and extra fetch process.",

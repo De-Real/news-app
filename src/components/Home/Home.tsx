@@ -10,6 +10,7 @@ const Home = () => {
 			<h2>{t("welcome")}</h2>
 			<p>{t("welcome_desc")}</p>
 			<p>{t("technologies")}</p>
+			<p>{t("adaptive")}</p>
 			<h3>{t("news_t")}</h3>
 			<p>{t("news_desc")}</p>
 			<p>{t("news_task")}</p>

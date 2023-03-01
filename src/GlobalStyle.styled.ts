@@ -85,8 +85,6 @@ h6 {
 		background: #FFFFFF;
 		color: #171A21;
 		line-height: 1.2;
-		/* overflow: auto;
-		overflow-y: scroll; */
 	}
 
 	main {
@@ -94,17 +92,32 @@ h6 {
 		flex-direction: column;
 		align-items: center;
 		padding: 40px 80px;
+		@media (max-width: 768px) {
+			padding: 25px 50px;
+		}
+		@media (max-width: 560px){
+			padding: 15px 30px;
+		}
+		@media (max-width: 460px){
+			padding: 10px 15px;
+		}
 	}
 
 	h2 {
 		font-size: 36px;
 		font-weight: 700;
 		text-align: center;
+		@media (max-width: 560px){
+			font-size: 30px;
+		}
 	}
 
 	h3 { 
 		font-size: 28px;
-		font-weight: 700
+		font-weight: 700;
+		@media (max-width: 560px){
+			font-size: 24px;
+		}
 	}
 `;
 

@@ -15,4 +15,13 @@ export const StyledNews = styled.div`
 		font-size: 24px;
 		margin-bottom: 12px;
 	}
+
+	@media (max-width: 768px) {
+		ul {
+			gap: 10px;
+		}
+		& p {
+			font-size: 16px;
+		}
+	}
 `;

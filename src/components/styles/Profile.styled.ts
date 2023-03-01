@@ -1,18 +1,27 @@
 import styled from "@emotion/styled";
 
-const firstDiv = styled.div`
-	width: 300px;
-	margin-bottom: 10px;
-	text-align: center;
-`;
-
 export const StyledProfile = styled.article`
-	width: 768px;
+	width: 100%;
+	display: flex;
+	gap: 20px;
+	@media (max-width: 768px) {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
 `;
 
-export const StyledHeaderProfile = styled.section`
+export const StyledContentProfile = styled.section`
 	display: flex;
+	flex-direction: column;
 	gap: 30px;
+`;
+
+export const StyledAsideProfile = styled.section`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 0 1 300px;
+	gap: 15px;
 `;
 
 export const StyledTitle = styled.p`
@@ -21,10 +30,16 @@ export const StyledTitle = styled.p`
 `;
 
 export const StyledImg = styled.div`
-	margin-bottom: 10px;
-	text-align: center;
-	& img {
+	display: flex;
+	justify-content: flex-end;
+	width: 250px;
+	@media (max-width: 768px) {
 		width: 300px;
+	}
+	margin-bottom: 10px;
+
+	& img {
+		width: 100%;
 		height: auto;
 	}
 `;
@@ -47,8 +62,10 @@ export const StyledActivities = styled.div`
 `;
 
 export const StyledButtonsControl = styled.div`
-	padding-left: 50px;
-	width: 300px;
+	width: 250px;
+	@media (max-width: 768px) {
+	}
+
 	margin-bottom: 10px;
 	text-align: center;
 	display: flex;

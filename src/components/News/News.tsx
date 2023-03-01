@@ -37,9 +37,7 @@ const News = () => {
 					{t("load_news")}
 				</Button>
 			)}
-			{isMaxPage && !hasData && (
-				<p> You have watched and deleted all available news</p>
-			)}
+			{isMaxPage && !hasData && <p> {t("no_more")}</p>}
 		</StyledNews>
 	);
 };

@@ -11,7 +11,6 @@ const ErrorPage = () => {
 		statusText: string;
 		status: string;
 	};
-	console.log(data, statusText);
 	return (
 		<>
 			<HeaderNavigation />
