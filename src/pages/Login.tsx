@@ -1,5 +1,5 @@
 import React from "react";
-import { ActionFunctionArgs, redirect } from "react-router-dom";
+import { ActionFunctionArgs } from "react-router-dom";
 import Login from "../components/Login/Login";
 
 const LoginPage = () => {

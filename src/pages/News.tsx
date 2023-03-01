@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { json, LoaderFunctionArgs, useLoaderData } from "react-router-dom";
+import { json, useLoaderData } from "react-router-dom";
 import { newsURL } from "../api/urls";
 import News from "../components/News/News";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
