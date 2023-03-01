@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunknews_app=self.webpackChunknews_app||[]).push([[488],{1488:function(n,e,t){t.r(e),t.d(e,{loginStatusLoader:function(){return a}});var u=t(9470),a=function(){var n=localStorage.getItem("loggedIn");return n&&JSON.parse(n)?null:(0,u.uX)("/login")}}}]);
+//# sourceMappingURL=488.f371a3a2.chunk.js.map
