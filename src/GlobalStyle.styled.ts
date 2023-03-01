@@ -2,8 +2,8 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
+/* NULL STYLES START*/
 	* {
 	padding: 0;
 	margin: 0;
@@ -78,27 +78,16 @@ h6 {
 	font-size: inherit;
 	font-weight: 400;
 }
-	
-  body {
-	margin: 0 auto; 
-	 background-color: #1A120B;
-    font-family: 'Inter', sans-serif;
-	 color: #171A21;
-	 display: flex;
-	 justify-content: center;
-	 line-height: 1.2;
-  }
+/* NULL STYLES END*/
 
   body > #root  {
 		min-height: 100vh;
 		width: 100%;
 		background: #FFFFFF;
+		color: #171A21;
+		line-height: 1.2;
 		overflow: auto;
 		overflow-y: scroll;
-	}
-
-	#root{
-		
 	}
 
 	main {
@@ -118,7 +107,6 @@ h6 {
 		font-size: 28px;
 		font-weight: 700
 	}
-
 `;
 
 export default GlobalStyle;
